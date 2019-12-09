@@ -2,44 +2,23 @@ import * as React from "react";
 import {
   FormControl,
   InputLabel,
-  FilledInput,
   FormHelperText,
   InputProps,
   FormControlProps,
-  withStyles,
-  Theme,
-  createStyles,
-  fade,
+  Input,
   InputBase
 } from "@material-ui/core";
 
-const Input = withStyles((theme: Theme) =>
-  createStyles({
-    input: {
-      borderRadius: 2,
-      position: "relative",
-      backgroundColor: theme.palette.common.white,
-      border: "1px solid #ced4da",
-      fontSize: 14,
-      lineHeight: 24,
-      padding: "6px 4px",
-      transition: theme.transitions.create(["border-color", "box-shadow"]),
-      "&:focus": {
-        borderColor: theme.palette.primary.main
-      }
-    }
-  })
-)(InputBase);
 
-type Props = Pick<FormControlProps, "fullWidth"> &
-  Pick<InputProps, "value" | "placeholder"> & { label: string };
+type Props = Pick<FormControlProps, "fullWidth"|"error"> &
+  Pick<InputProps, "value" | "placeholder"> & { label: string, helperText?: string };
 const component: React.FC<Props> = props => {
-  const { fullWidth, value, placeholder, label } = props;
+  const { fullWidth, value, placeholder, label, error, helperText } = props;
   return (
-    <FormControl color="primary" fullWidth={fullWidth}>
+    <FormControl color="primary" fullWidth={fullWidth} error={error}>
       <InputLabel shrink>{label}</InputLabel>
-      <Input value={value} placeholder={placeholder}/>
-      <FormHelperText>Helptext</FormHelperText>
+      <InputBase value={value} placeholder={placeholder} error={error}/>
+      <FormHelperText>{helperText}</FormHelperText>
     </FormControl>
   );
 };

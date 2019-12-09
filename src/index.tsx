@@ -11,9 +11,13 @@ import green from "@material-ui/core/colors/green";
 import { TextField } from "./components/textfield/textfield";
 import { Button } from "./components/button/button";
 
+const primaryMain = "#006F99";
+const errorMain = "#BF1B44";
+const defaultTheme = createMuiTheme();
 const theme = createMuiTheme({
   palette: {
-    primary: { main: "#006F99" }
+    primary: { main: primaryMain },
+    error: { main: errorMain}
   },
   typography: {
     fontFamily: "Source Sans Pro"
@@ -24,6 +28,27 @@ const theme = createMuiTheme({
         paddingTop: "1rem",
         paddingBottom: "0.4rem"
       }
+    },
+    MuiInputBase: {
+      root: {
+        border: "1px solid #ced4da",
+        "&$error": {
+          borderColor: errorMain
+        }
+      },
+      input: {
+        borderRadius: 2,
+        position: "relative",
+        backgroundColor: defaultTheme.palette.common.white,
+        fontSize: 14,
+        lineHeight: 24,
+        padding: "6px 4px",
+        transition: defaultTheme.transitions.create(["border-color", "box-shadow"]),
+        "&:focus": {
+          borderColor: primaryMain
+        },
+      }
+        
     },
     MuiInputLabel: {
       formControl: {
@@ -47,6 +72,18 @@ const theme = createMuiTheme({
           borderColor: green[200]
         }
       }
+    },
+    MuiFormHelperText: {
+      root: {
+        fontSize: 10,
+        lineHeight: 1.6,
+        marginTop: 1,
+        padding: "2px 4px",
+        "&$error": {
+          backgroundColor: "#BF1B44",
+          color: "white"
+        }
+      }
     }
   }
 });
@@ -67,10 +104,14 @@ const App = () => (
       </Typography>
     </Box>
     <Box m={1} bgcolor={grey[50]}>
-      <TextField placeholder="Kort dense input" label="Label uden animation" />
+      <TextField placeholder="Kort input" label="Label uden animation" />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
-      <TextField fullWidth placeholder="Full width" label="Label" />
+      <TextField fullWidth placeholder="Full width" label="Label" helperText="Helper text" />
+    </Box>
+    <Box m={1} bgcolor={grey[50]}>
+      <TextField placeholder="Placeholder" label="Label" error helperText="Der er fejl i denne"/>
+      
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <Button>Knap</Button>
