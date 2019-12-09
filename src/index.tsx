@@ -55,13 +55,6 @@ const App = () => (
     <Typography variant="h1">MUI STYLING</Typography>
     <Box>
       <Typography variant="body1" paragraph>
-        Temaets primary farve sat til{" "}
-        <Box component="span" color="primary.main">
-          #6ab78a
-        </Box>{" "}
-        som er taget fra Unik's hjemmeside og produktet Bolig.
-      </Typography>
-      <Typography variant="body1" paragraph>
         Input komponenterne er stort set kun ændret ved at tilpasse MUI
         komponenterne og kun med ganske lidt styling.
       </Typography>
