@@ -22,7 +22,6 @@ const BootstrapInput = withStyles((theme: Theme) =>
       border: "1px solid #ced4da",
       fontSize: 14,
       lineHeight: 24,
-      width: "auto",
       padding: "6px 4px",
       transition: theme.transitions.create(["border-color", "box-shadow"]),
       "&:focus": {
@@ -39,7 +38,7 @@ const component: React.FC<Props> = props => {
   return (
     <FormControl color="primary" fullWidth={fullWidth}>
       <InputLabel shrink>{label}</InputLabel>
-      <BootstrapInput value={value} placeholder={placeholder} />
+      <BootstrapInput value={value} placeholder={placeholder}/>
       <FormHelperText>Helptext</FormHelperText>
     </FormControl>
   );
