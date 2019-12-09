@@ -13,7 +13,7 @@ import {
   InputBase
 } from "@material-ui/core";
 
-const BootstrapInput = withStyles((theme: Theme) =>
+const Input = withStyles((theme: Theme) =>
   createStyles({
     input: {
       borderRadius: 2,
@@ -38,7 +38,7 @@ const component: React.FC<Props> = props => {
   return (
     <FormControl color="primary" fullWidth={fullWidth}>
       <InputLabel shrink>{label}</InputLabel>
-      <BootstrapInput value={value} placeholder={placeholder}/>
+      <Input value={value} placeholder={placeholder}/>
       <FormHelperText>Helptext</FormHelperText>
     </FormControl>
   );
