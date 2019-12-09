@@ -18,7 +18,7 @@ const component: React.FC<Props> = props => {
     <FormControl color="primary" fullWidth={fullWidth} error={error}>
       <InputLabel shrink>{label}</InputLabel>
       <InputBase value={value} placeholder={placeholder} error={error}/>
-      <FormHelperText>{helperText}</FormHelperText>
+      {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   );
 };

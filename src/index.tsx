@@ -92,26 +92,21 @@ const App = () => (
     <Typography variant="h1">MUI STYLING</Typography>
     <Box>
       <Typography variant="body1" paragraph>
-        Input komponenterne er stort set kun ændret ved at tilpasse MUI
-        komponenterne og kun med ganske lidt styling.
-      </Typography>
-      <Typography variant="body1" paragraph>
         Alle komponenterne er placeret på en{" "}
-        <Box display="inline" bgcolor={grey[50]}>
+        <Box display="inline" component="span" bgcolor={grey[50]}>
           grå
         </Box>{" "}
         baggrund, så man kan se deres dimensioner.
       </Typography>
     </Box>
     <Box m={1} bgcolor={grey[50]}>
-      <TextField placeholder="Kort input" label="Label uden animation" />
+      <TextField placeholder="Kort input" label="Uden helpertext" />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <TextField fullWidth placeholder="Full width" label="Label" helperText="Helper text" />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <TextField placeholder="Placeholder" label="Label" error helperText="Der er fejl i denne"/>
-      
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <Button>Knap</Button>
