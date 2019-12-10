@@ -1,89 +1,27 @@
 import * as React from "react";
 import { render } from "react-dom";
-import {
-  ThemeProvider,
-  Typography,
-  createMuiTheme,
-  Box
-} from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import grey from "@material-ui/core/colors/grey";
-import green from "@material-ui/core/colors/green";
 import { TextField } from "./components/textfield/textfield";
 import { Button } from "./components/button/button";
+import { ITheme, ThemeProvider } from "./theme";
 
-const primaryMain = "#006F99";
-const errorMain = "#BF1B44";
-const defaultTheme = createMuiTheme();
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: primaryMain },
-    error: { main: errorMain }
-  },
+const theme: ITheme = {
   typography: {
-    fontFamily: "Source Sans Pro"
+    fontFamily: "Source Sans Pro",
+    fontSize: 16
   },
-  overrides: {
-    MuiInputBase: {
-      root: {
-        border: "1px solid #ced4da",
-        "&$focused": {borderColor: primaryMain},
-        "&$error": {
-          borderColor: errorMain
-        }
-      },
-      input: {
-        borderRadius: 2,
-        position: "relative",
-        backgroundColor: defaultTheme.palette.common.white,
-        fontSize: 14,
-        lineHeight: 24,
-        padding: "6px 4px",
-        transition: defaultTheme.transitions.create([
-          "border-color",
-          "box-shadow"
-        ]),
-        "&$disabled": {
-          backgroundColor: "#f3f3f3"
-        }
-      }
-    },
-    MuiInputLabel: {
-      formControl: {
-        fontSize: 16,
-        lineHeight: 1.25,
-        color: "#333333",
-        position: "relative"
-      }
-    },
-    MuiFormHelperText: {
-      root: {
-        fontSize: 10,
-        lineHeight: 1.6,
-        marginTop: 1,
-        padding: "2px 4px",
-        "&$error": {
-          backgroundColor: "#BF1B44",
-          color: "white"
-        }
-      }
-    },
-
-    MuiButton: {
-      contained: {
-        boxShadow: "none",
-        border: "solid 2px transparent",
-        padding: "2 4 2 4",
-        borderRadius: 0,
-        "&$focusVisible": {
-          boxShadow: "none",
-          borderStyle: "solid",
-          borderWidth: 2,
-          borderColor: green[200]
-        }
-      }
+  palette: {
+    primary: "#006F99",
+    error: "#BF1B44"
+  },
+  components: {
+    input: {
+      border: "1px solid #ced4da",
+      borderRadius: 2
     }
   }
-});
+};
 const App = () => (
   <ThemeProvider theme={theme}>
     <Typography variant="h1">MUI STYLING</Typography>
