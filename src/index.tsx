@@ -17,7 +17,7 @@ const defaultTheme = createMuiTheme();
 const theme = createMuiTheme({
   palette: {
     primary: { main: primaryMain },
-    error: { main: errorMain}
+    error: { main: errorMain }
   },
   typography: {
     fontFamily: "Source Sans Pro"
@@ -26,11 +26,9 @@ const theme = createMuiTheme({
     MuiInputBase: {
       root: {
         border: "1px solid #ced4da",
+        "&$focused": {borderColor: primaryMain},
         "&$error": {
           borderColor: errorMain
-        },
-        "&$disabled": {
-          backgroundColor: "yellow"
         }
       },
       input: {
@@ -40,19 +38,33 @@ const theme = createMuiTheme({
         fontSize: 14,
         lineHeight: 24,
         padding: "6px 4px",
-        transition: defaultTheme.transitions.create(["border-color", "box-shadow"]),
-        "&:focus": {
-          borderColor: primaryMain
-        },
+        transition: defaultTheme.transitions.create([
+          "border-color",
+          "box-shadow"
+        ]),
+        "&$disabled": {
+          backgroundColor: "#f3f3f3"
+        }
       }
-        
     },
     MuiInputLabel: {
       formControl: {
         fontSize: 16,
         lineHeight: 1.25,
-        color: "#888888",
+        color: "#333333",
         position: "relative"
+      }
+    },
+    MuiFormHelperText: {
+      root: {
+        fontSize: 10,
+        lineHeight: 1.6,
+        marginTop: 1,
+        padding: "2px 4px",
+        "&$error": {
+          backgroundColor: "#BF1B44",
+          color: "white"
+        }
       }
     },
 
@@ -67,18 +79,6 @@ const theme = createMuiTheme({
           borderStyle: "solid",
           borderWidth: 2,
           borderColor: green[200]
-        }
-      }
-    },
-    MuiFormHelperText: {
-      root: {
-        fontSize: 10,
-        lineHeight: 1.6,
-        marginTop: 1,
-        padding: "2px 4px",
-        "&$error": {
-          backgroundColor: "#BF1B44",
-          color: "white"
         }
       }
     }
@@ -100,13 +100,43 @@ const App = () => (
       <TextField placeholder="Kort input" label="Uden helpertext" />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
-      <TextField fullWidth placeholder="Full width" label="Label" helperText="Helper text" />
+      <TextField
+        fullWidth
+        placeholder="Full width"
+        label="Label"
+        helperText="Helper text"
+      />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
-      <TextField placeholder="Placeholder" label="Label" error helperText="Der er fejl i denne"/>
+      <TextField
+        placeholder="Placeholder"
+        label="Label"
+        error
+        helperText="Der er fejl i denne"
+      />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
-      <TextField placeholder="Kort input" label="Label" disabled helperText="Disabled" />
+      <TextField
+        placeholder="Kort input"
+        label="Label"
+        disabled
+        helperText="Disabled"
+      />
+    </Box>
+    <Box m={1} bgcolor={grey[50]}>
+      <TextField placeholder="Kort input" label="Uden helpertext" />
+      <TextField
+        placeholder="Placeholder"
+        label="Label"
+        error
+        helperText="Der er fejl i denne"
+      />
+      <TextField
+        placeholder="Kort input"
+        label="Label"
+        disabled
+        helperText="Disabled"
+      />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <Button>Knap</Button>
