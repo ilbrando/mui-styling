@@ -35,16 +35,13 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
               borderRadius: theme.components.input.borderRadius,
               position: "relative",
               backgroundColor: muiDefaultTheme.palette.common.white,
+              color: "#3a3a3a",
               fontSize: theme.components.input.fontSizeInput,
               lineHeight: 1.25,
               paddingLeft: theme.components.input.paddingLeftRightInput,
               paddingRight: theme.components.input.paddingLeftRightInput,
               paddingTop: theme.components.input.paddingTopBottomInput,
               paddingBottom: theme.components.input.paddingTopBottomInput,
-              transition: muiDefaultTheme.transitions.create([
-                "border-color",
-                "box-shadow"
-              ]),
               "&$disabled": {
                 backgroundColor: "#f3f3f3"
               }
