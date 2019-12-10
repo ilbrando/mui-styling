@@ -20,7 +20,11 @@ const theme: ITheme = {
       borderRadius: 2,
       fontSizeLabel: 16,
       fontSizeInput: 14,
-      fontSizeHelpText: 10
+      fontSizeHelpText: 10,
+      paddingLeftRightInput: 8,
+      paddingTopBottomInput: 4,
+      paddingLeftRightHelpText: 4,
+      paddingTopBottomHelpText: 2
     }
   }
 };

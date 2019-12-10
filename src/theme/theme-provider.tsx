@@ -36,8 +36,11 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
               position: "relative",
               backgroundColor: muiDefaultTheme.palette.common.white,
               fontSize: theme.components.input.fontSizeInput,
-              lineHeight: 24,
-              padding: "6px 4px",
+              lineHeight: 1.25,
+              paddingLeft: theme.components.input.paddingLeftRightInput,
+              paddingRight: theme.components.input.paddingLeftRightInput,
+              paddingTop: theme.components.input.paddingTopBottomInput,
+              paddingBottom: theme.components.input.paddingTopBottomInput,
               transition: muiDefaultTheme.transitions.create([
                 "border-color",
                 "box-shadow"
@@ -60,9 +63,12 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
               fontSize: theme.components.input.fontSizeHelpText,
               lineHeight: 1.6,
               marginTop: 1,
-              padding: "2px 4px",
+              paddingLeft: theme.components.input.paddingLeftRightHelpText,
+              paddingRight: theme.components.input.paddingLeftRightHelpText,
+              paddingTop: theme.components.input.paddingTopBottomHelpText,
+              paddingBottom: theme.components.input.paddingTopBottomHelpText,
               "&$error": {
-                backgroundColor: "#BF1B44",
+                backgroundColor: theme.palette.error,
                 color: "white"
               }
             }

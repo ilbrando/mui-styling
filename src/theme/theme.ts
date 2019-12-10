@@ -13,6 +13,10 @@ export interface ITheme {
       fontSizeInput: number;
       fontSizeLabel: number;
       fontSizeHelpText: number;
+      paddingLeftRightInput: number;
+      paddingTopBottomInput: number;
+      paddingLeftRightHelpText: number;
+      paddingTopBottomHelpText: number;
     };
   };
 }
