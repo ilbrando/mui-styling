@@ -18,7 +18,7 @@ const theme: ITheme = {
     input: {
       border: "1px solid #ced4da",
       borderRadius: 2,
-      fontSizeLabel: 20, // burde være 16, men det bliver meget småt. Mon MUI har en transform der ændrer det?
+      fontSizeLabel: 18, // burde være 16, men det bliver meget småt. Mon MUI har en transform der ændrer det?
       fontSizeInput: 14,
       fontSizeHelpText: 10,
       paddingLeftRightInput: 6, // Har ønsket 8, men det synes MIB er for meget

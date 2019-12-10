@@ -50,7 +50,8 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
           MuiInputLabel: {
             formControl: {
               fontSize: theme.components.input.fontSizeLabel,
-              lineHeight: 1.25,
+              fontWeight: "bolder",
+              lineHeight: 1,
               color: "#333333",
               position: "relative"
             }
