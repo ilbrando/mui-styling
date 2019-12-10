@@ -5,17 +5,16 @@ import {
   FormHelperText,
   InputProps,
   FormControlProps,
-  Input,
   InputBase
 } from "@material-ui/core";
 
 
-type Props = Pick<FormControlProps, "fullWidth"|"error"> &
+type Props = Pick<FormControlProps, "fullWidth"|"error"|"disabled"> &
   Pick<InputProps, "value" | "placeholder"> & { label: string, helperText?: string };
 const component: React.FC<Props> = props => {
-  const { fullWidth, value, placeholder, label, error, helperText } = props;
+  const { fullWidth, value, placeholder, label, error, helperText, disabled } = props;
   return (
-    <FormControl color="primary" fullWidth={fullWidth} error={error}>
+    <FormControl color="primary" fullWidth={fullWidth} error={error} disabled={disabled}>
       <InputLabel shrink>{label}</InputLabel>
       <InputBase value={value} placeholder={placeholder} error={error}/>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}

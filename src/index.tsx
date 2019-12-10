@@ -23,17 +23,14 @@ const theme = createMuiTheme({
     fontFamily: "Source Sans Pro"
   },
   overrides: {
-    MuiFilledInput: {
-      inputMarginDense: {
-        paddingTop: "1rem",
-        paddingBottom: "0.4rem"
-      }
-    },
     MuiInputBase: {
       root: {
         border: "1px solid #ced4da",
         "&$error": {
           borderColor: errorMain
+        },
+        "&$disabled": {
+          backgroundColor: "yellow"
         }
       },
       input: {
@@ -107,6 +104,9 @@ const App = () => (
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <TextField placeholder="Placeholder" label="Label" error helperText="Der er fejl i denne"/>
+    </Box>
+    <Box m={1} bgcolor={grey[50]}>
+      <TextField placeholder="Kort input" label="Label" disabled helperText="Disabled" />
     </Box>
     <Box m={1} bgcolor={grey[50]}>
       <Button>Knap</Button>
