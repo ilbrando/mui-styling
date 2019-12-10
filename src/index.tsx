@@ -8,8 +8,7 @@ import { ITheme, ThemeProvider } from "./theme";
 
 const theme: ITheme = {
   typography: {
-    fontFamily: "Source Sans Pro",
-    fontSize: 16
+    fontFamily: "Source Sans Pro"
   },
   palette: {
     primary: "#006F99",
@@ -18,7 +17,10 @@ const theme: ITheme = {
   components: {
     input: {
       border: "1px solid #ced4da",
-      borderRadius: 2
+      borderRadius: 2,
+      fontSizeLabel: 16,
+      fontSizeInput: 14,
+      fontSizeHelpText: 10
     }
   }
 };

@@ -5,12 +5,14 @@ export interface ITheme {
   };
   typography: {
     fontFamily: string;
-    fontSize: number;
   };
   components: {
     input: {
       border: string;
       borderRadius: number;
+      fontSizeInput: number;
+      fontSizeLabel: number;
+      fontSizeHelpText: number;
     };
   };
 }

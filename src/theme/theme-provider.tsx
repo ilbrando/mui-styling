@@ -35,7 +35,7 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
               borderRadius: theme.components.input.borderRadius,
               position: "relative",
               backgroundColor: muiDefaultTheme.palette.common.white,
-              fontSize: 14,
+              fontSize: theme.components.input.fontSizeInput,
               lineHeight: 24,
               padding: "6px 4px",
               transition: muiDefaultTheme.transitions.create([
@@ -49,7 +49,7 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
           },
           MuiInputLabel: {
             formControl: {
-              fontSize: 16,
+              fontSize: theme.components.input.fontSizeLabel,
               lineHeight: 1.25,
               color: "#333333",
               position: "relative"
@@ -57,7 +57,7 @@ const ThemeProvider: React.FC<IThemeProviderProps> = props => {
           },
           MuiFormHelperText: {
             root: {
-              fontSize: 10,
+              fontSize: theme.components.input.fontSizeHelpText,
               lineHeight: 1.6,
               marginTop: 1,
               padding: "2px 4px",
